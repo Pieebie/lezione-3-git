@@ -1,0 +1,28 @@
+name: Valida index.html
+
+# Esegui ad ogni push e ad ogni Pull Request verso main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    name: Controlla la pagina della classe
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1 — Scarica il codice del branch/PR
+      - name: Checkout del repository
+        uses: actions/checkout@v4
+
+      # 2 — Installa Python (disponibile di default, ma esplicitiamo la versione)
+      - name: Configura Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3 — Esegui lo script di validazione
+      - name: Esegui la validazione
+        run: python3 .github/scripts/validate.py
