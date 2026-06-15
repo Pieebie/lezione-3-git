@@ -52,12 +52,6 @@ Copia uno dei blocchi `<li>` esistenti, incollalo **sopra** il commento e modifi
 </li>
 ```
 
-Aggiorna anche il numero nel badge:
-
-```html
-<span class="count">3</span>  <!-- incrementa di 1 -->
-```
-
 ### 4 — Fai il commit
 
 ```bash
